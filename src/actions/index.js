@@ -16,7 +16,7 @@ export const signOut = () => {
 };
 
 // list 
-export const fetchStreams = () => async ()=> {
+export const fetchStreams = () => async dispatch => {
     const res = await streams.get('/streams');
     dispatch({type: FETCH_STREAMS, payload: res.data});
 };
@@ -42,5 +42,5 @@ export const editStream = (id, formValues) => async dispatch => {
 // delete
 export const deleteStream = (id) => async (dispatch) => {
     const res = await streams.delete(`/streams/${id}`);
-    dispatch({ type: DELETE_STREAM })
+    dispatch({ type: DELETE_STREAM, payload: res.data })
 }
