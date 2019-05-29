@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchStreams} from '../../actions';
-import { isTemplateElement } from '@babel/types';
-import { statement } from '@babel/template';
 
 class StreamList extends React.Component {
 
@@ -44,7 +42,7 @@ class StreamList extends React.Component {
         if(this.props.isSignedIn){
             return (
                 <div style={{textAlign: 'right'}}>
-                    <Link className='ui button primary'>Create Stream</Link>
+                    <Link to="/streams/new" className='ui button primary'>Create Stream</Link>
                 </div>
             );
         }

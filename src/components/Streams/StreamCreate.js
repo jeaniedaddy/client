@@ -36,7 +36,6 @@ class StreamCreate extends React.Component{
                 <Field name="description" component={this.renderInput} label="Enter Description" />
                 <button className="ui button primary">Submit</button>
             </form>
-            
         );
     }
 }
