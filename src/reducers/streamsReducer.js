@@ -3,11 +3,11 @@ import {FETCH_STREAM, FETCH_STREAMS, CREATE_STREAM, EDIT_STREAM, DELETE_STREAM }
 
 
 export default (state = {}, action) => {
-    switch(action_type){
+    switch(action.type){
         case FETCH_STREAM :
             return  {...state, [action.payload.id]: action.payload}; 
         case FETCH_STREAMS:
-            return  {...state, ...action.payload}; 
+            return  {...state, ..._.mapKeys(action.payload,'id')}; 
         case CREATE_STREAM:
             return {...state, [action.payload.id]: action.payload};  
         case EDIT_STREAM:
@@ -17,5 +17,4 @@ export default (state = {}, action) => {
         default : 
             return state; 
     }
-
 };
